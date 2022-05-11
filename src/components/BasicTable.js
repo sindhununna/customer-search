@@ -10,12 +10,12 @@ export const BasicTable = () => {
   const columns = useMemo(() => COLUMNS, [])
   const data = useMemo(() => MOCK_DATA, [])
 
-  // const defaultColumn = React.useMemo(
-  //   () => ({
-  //     Filter: GlobalFilter
-  //   }),
-  //   []
-  // )
+  const defaultColumn = React.useMemo(
+    () => ({
+      Filter: GlobalFilter
+    }),
+    []
+  )
 
   const {
     getTableProps,
@@ -34,10 +34,10 @@ export const BasicTable = () => {
     setGlobalFilter,
     prepareRow
   } = useTable(
-    {      
+    {  defaultColumn,    
       columns,
       data,
-      initialState: { pageIndex: 2 }
+      initialState: { pageIndex: 0}
     },
    
     useGlobalFilter, usePagination,
@@ -45,11 +45,12 @@ export const BasicTable = () => {
 
 
   const {globalFilter, pageIndex, pageSize } = state
-
+  console.log(page.length);
   return (
     <>
     <h1>Search Customer</h1>
     <GlobalFilter filter={globalFilter} setFilter={setGlobalFilter} />
+    <p>Total number of records: {page.length}</p>
       {/* <table {...getTableProps()} className="container">
         <thead>
           {headerGroups.map(headerGroup => (
@@ -140,6 +141,7 @@ export const BasicTable = () => {
           ))}
         </select>
       </div>
+     
     </>
   )
 }
