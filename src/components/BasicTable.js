@@ -50,7 +50,7 @@ export const BasicTable = () => {
     <>
     <h1>Search Customer</h1>
     <GlobalFilter filter={globalFilter} setFilter={setGlobalFilter} />
-    <p>Total number of records: {page.length}</p>
+    <p><b>Total number of records: {page.length}</b></p>
       {/* <table {...getTableProps()} className="container">
         <thead>
           {headerGroups.map(headerGroup => (
