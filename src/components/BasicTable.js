@@ -57,9 +57,9 @@ export const BasicTable = () => {
       <h1>Search Customer</h1>
       <br />
       <GlobalFilter filter={globalFilter} setFilter={setGlobalFilter} />
-      <h6>
+      <h3>
         <b>Records retrieved: {page.length}</b>
-      </h6>
+      </h3>
 
       <table {...getTableProps()}>
         <thead>
