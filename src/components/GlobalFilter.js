@@ -11,6 +11,13 @@ export const GlobalFilter = ({ filter, setFilter }) => {
 //   const handleClick=(filtervalue)=>{
 // value===""?setFilter(value):setFilter(filtervalue || undefined)
 //   }
+
+const button={
+  borderRadius: "10px",
+  padding:"3px",
+  fontSize: "15px",
+margin:"3px",
+}
   return (
     <>
       <div className="ui category search">
@@ -27,7 +34,7 @@ export const GlobalFilter = ({ filter, setFilter }) => {
               }}
               placeholder="Search customer..."
             />
-            <button onClick={()=>handleClick(value)}className="search icon">Search</button>
+            <button style={button} onClick={()=>handleClick(value)}className="search icon">Search</button>
           </span>
         </div>
       </div>
